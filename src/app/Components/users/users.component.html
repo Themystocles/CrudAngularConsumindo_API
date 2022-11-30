@@ -3,6 +3,8 @@
 <ul *ngIf="Usuarios">
     <li *ngFor="let User of Usuarios.data">
         {{User.first_name}}
+        {{User.id}}
+        <a routerLink="/users/update/{{User.id}}">EDITAR</a>
 
     </li>
 </ul>

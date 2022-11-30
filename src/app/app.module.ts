@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './Components/users/users.component';
 import { CreateUserComponent } from './Components/create-user/create-user.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateComponent } from './Components/update/update.component';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     UsersComponent,
     CreateUserComponent,
+    UpdateComponent,
 
 
   ],

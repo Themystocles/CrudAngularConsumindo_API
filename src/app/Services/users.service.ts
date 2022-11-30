@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RequestCreate, ResponseCreate, ResponseUsers } from '../Models/userModel';
+import { RequestCreate, RequestUpdate, ResponseCreate, ResponseUpdate, ResponseUser, ResponseUsers } from '../Models/userModel';
 import { HttpClient } from "@angular/common/http"
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-  private url = "https://reqres.in/api/users?page=2"
-
-
+  private url = "https://reqres.in/api/users";
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +18,17 @@ export class UsersService {
   }
   createUser(request: RequestCreate): Observable<ResponseCreate> {
     return this.http.post<ResponseCreate>(this.url, request);
+  }
+
+  // aqui começa o UPDATE
+  getUser(id: string): Observable<ResponseUser> {
+    const _url = `${this.url}/${id}`;
+    return this.http.get<ResponseUser>(_url);
+
+  }
+  updateUser(id: string, request: RequestUpdate): Observable<ResponseUpdate> {
+    const _url = `${this.url}/${id}`;
+    return this.http.put<ResponseUpdate>(_url, request);
+
   }
 }
