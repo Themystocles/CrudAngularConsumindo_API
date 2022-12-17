@@ -1,10 +1,18 @@
-<h2>Atualizar Usuarios</h2>
+<h2>Atualizar Usuarios</h2><br>
 
 
 
-<div *ngIf="request">
-    <input placeholder="Inisira o nome" [(ngModel)]="request.name">
-    <input placeholder="Inisira a profissão" [(ngModel)]="request.job">
-    <button (click)="atualizar()">Atualizar</button>
 
-</div>
+
+
+<mat-form-field class="example-full-width">
+    <mat-label>Nome do Usuário</mat-label>
+    <input matInput placeholder="Nome">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <mat-label>Profissão</mat-label>
+    <input matInput placeholder="Profissão" [(ngModel)]="request.job">
+</mat-form-field>
+
+<button (click)="atualizar()">Atualizar</button>
