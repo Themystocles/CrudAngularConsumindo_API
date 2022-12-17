@@ -9,6 +9,8 @@ import { CreateUserComponent } from './Components/create-user/create-user.compon
 import { FormsModule } from '@angular/forms';
 import { UpdateComponent } from './Components/update/update.component';
 import { DeleteComponent } from './Components/delete/delete.component';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -21,12 +23,15 @@ import { DeleteComponent } from './Components/delete/delete.component';
     DeleteComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
